@@ -1,10 +1,23 @@
-var Customer = /** @class */ (function () {
-    function Customer(theFName, theLName) {
-        this.FName = theFName;
-        this.LName = theLName;
+"use strict";
+class Customer {
+    constructor(theFName, theLName) {
+        this._FName = theFName;
+        this._LName = theLName;
     }
-    return Customer;
-}());
-var myCustomer = new Customer("Almaz", "Dechasa");
-console.log(myCustomer.FName);
-console.log(myCustomer.LName);
+    get firstName() {
+        return this._FName;
+    }
+    set firstName(value) {
+        this._FName = value;
+    }
+    get lastName() {
+        return this._LName;
+    }
+    set lastName(value) {
+        this._LName = value;
+    }
+}
+let myCustomer = new Customer("Almaz", "Dechasa");
+console.log(myCustomer.firstName);
+console.log(myCustomer.lastName);
+myCustomer.lastName = "Eidea";
